@@ -482,13 +482,14 @@ class Table
         $updatedAt = is_null($updatedAt) ? 'updated_at' : $updatedAt;
 
         $this->addColumn($createdAt, 'timestamp', [
-                   'default' => 'CURRENT_TIMESTAMP',
-                   'update' => '',
+                   'default'  => 'CURRENT_TIMESTAMP',
+                   'update'   => '',
                    'timezone' => $withTimezone,
              ])
              ->addColumn($updatedAt, 'timestamp', [
-                 'null' => true,
-                 'default' => null,
+                 'null'     => true,
+                 'update'   => 'CURRENT_TIMESTAMP',
+                 'default'  => null,
                  'timezone' => $withTimezone,
              ]);
 
